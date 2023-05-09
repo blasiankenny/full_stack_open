@@ -1,0 +1,28 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server 
+    server-->>browser: HTML document
+    deactivate server
+
+    browser->>server:GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server 
+    server-->>browser: HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: the css file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: [{content: "hhh", date: "2023-05-09T03:58:13.293Z"}, {content: "w", date: "2023-05-09T04:10:44.582Z"},…]
+    deactivate server
